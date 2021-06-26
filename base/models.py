@@ -8,10 +8,11 @@ class Task(models.Model):
     title=models.CharField(max_length=200,null=True,blank=True)
     description=models.TextField(null=True,blank=True)
     complete=models.BooleanField(default=False)
-    created = models.DateField(null=True,blank=True)
+    created = models.DateField(auto_now_add=True)
 
     def __str__(self) -> str:
         return self.title
+    
 
     class Meta:
         ordering=['complete']
